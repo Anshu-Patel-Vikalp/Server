@@ -1,5 +1,6 @@
 flask
 numpy
 tensorflow
-image
+gunicorn
+pillow
 
