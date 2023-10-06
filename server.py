@@ -5,7 +5,7 @@ import json
 import PIL
 
 app = Flask(__name__)
-model = load_model("https://github.com/Anshu-Patel-Vikalp/Server/blob/main/mobilenetv2.h5")
+model = load_model("mobilenetv2.h5")
 
 def preprocess_input(img):
     img = np.array(img).reshape((1, 224, 224, 3))
@@ -23,6 +23,6 @@ def model():
     return ("The prediction is {}".format(['Fabric', 'Glass', 'Leather', 'Metal', 'Paper', 'Plastic', 'Wood'][model.predict(img).argmax()]))
 
 if __name__ == '__main__':
-    model = load_model("https://github.com/Anshu-Patel-Vikalp/Server/blob/main/mobilenetv2.h5")
+    model = load_model("mobilenetv2.h5")
     app.run(debug=True)
 
